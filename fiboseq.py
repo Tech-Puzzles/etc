@@ -16,12 +16,13 @@ class Solution:
                 location=1
                 trail=i
                 lead=j
+                operations+=1
                 while j+location < len(A):
                     print('\x1b[2J')
                     print('input',A)
                     print('testing',A[trail],'+',A[lead],'=',A[j+location],A[trail]+A[lead]==A[j+location])
                     print('operations',operations)
-                    time.sleep(1)
+                    # time.sleep(1)
                     if A[trail]+A[lead]==A[j+location]:
                         length+=1
                         trail=lead

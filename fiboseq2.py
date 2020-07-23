@@ -11,10 +11,12 @@ class Solution:
         S = set(A)  
         n=len(A)
         maxLen = 0
+        operations=0
       
         for i in range(0, n):  
                 for j in range(i + 1, n):  
               
+                    operations+=1
                     x = A[j]  
                     y = A[i] + A[j]  
                     length = 2
@@ -23,6 +25,7 @@ class Solution:
                     # element is found  
                     while y in S:  
               
+                            operations+=1
                             # next element of fib subseq  
                             z = x + y  
                             x = y  
@@ -31,7 +34,8 @@ class Solution:
                             length += 1
                     maxLen = max(maxLen, length)  
                       
-        return maxLen if maxLen >= 3 else 0
+        maxLen = maxLen if maxLen >= 3 else 0
+        return (maxLen,operations)
 
     def lenLongestFibSubseq(self, A: List[int]) -> int:
         print('===>',A)
