@@ -1,4 +1,6 @@
 from typing import List
+from colorama import Fore, Back, Style
+import time
 
 class Solution:
     def lenLongestFibSubseq(self, A: List[int]) -> int:
@@ -15,7 +17,11 @@ class Solution:
                 trail=i
                 lead=j
                 while j+location < len(A):
+                    print('\x1b[2J')
+                    print('input',A)
                     print('testing',A[trail],'+',A[lead],'=',A[j+location],A[trail]+A[lead]==A[j+location])
+                    print('operations',operations)
+                    time.sleep(1)
                     if A[trail]+A[lead]==A[j+location]:
                         length+=1
                         trail=lead
