@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
     def lenLongestFibSubseq(self, A: List[int]) -> int:
+        operations=0
         print('===>',A)
         answers={}
         if len(A)<3:
@@ -20,15 +21,16 @@ class Solution:
                         trail=lead
                         lead=trail+1
                     #lead+=1
+                    operations+=1
                     location+=1
                 print('(',i,',',j,')',length)    
                 answers[(i,j)]=length
         #print(answers)
-        return(max(answers.values()))
+        return(max(answers.values()),operations)
     
     
 test=Solution()
-test.lenLongestFibSubseq([2,4,7,8,9,10,14,15,18,23,32,50])
+print('answer:', test.lenLongestFibSubseq([2,4,7,8,9,10,14,15,18,23,32,50]))
         
 
 
