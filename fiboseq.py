@@ -1,0 +1,34 @@
+from typing import List
+
+class Solution:
+    def lenLongestFibSubseq(self, A: List[int]) -> int:
+        print('===>',A)
+        answers={}
+        if len(A)<3:
+            return 0
+        for i in range(len(A)):
+            for j in range(i+1,len(A)):
+                #print(i,j,A[i],A[j])
+                length=2
+                location=1
+                trail=i
+                lead=j
+                while j+location < len(A):
+                    print('testing',A[trail],'+',A[lead],'=',A[j+location],A[trail]+A[lead]==A[j+location])
+                    if A[trail]+A[lead]==A[j+location]:
+                        length+=1
+                        trail=lead
+                        lead=trail+1
+                    #lead+=1
+                    location+=1
+                print('(',i,',',j,')',length)    
+                answers[(i,j)]=length
+        #print(answers)
+        return(max(answers.values()))
+    
+    
+test=Solution()
+test.lenLongestFibSubseq([2,4,7,8,9,10,14,15,18,23,32,50])
+        
+
+
