@@ -59,9 +59,15 @@ def max_area_histogram(histogram):
 			# Calculate the area with 
 			# histogram[top_of_stack] stack 
 			# as smallest bar 
+			if stack:
+				print('compare', histogram[top_of_stack],' * ', '((index - stack[-1] - 1) ', index, ' - ', stack[-1], ' - 1')
+			else:
+				print('compare', histogram[top_of_stack],' * ', 'index ', index)
 			area = (histogram[top_of_stack] *
 				((index - stack[-1] - 1) 
 				if stack else index)) 
+			print('new area', area)
+			time.sleep(5)
 
 			# update max area, if needed 
 			max_area = max(max_area, area) 
