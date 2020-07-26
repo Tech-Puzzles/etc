@@ -66,7 +66,7 @@ def max_area_histogram(histogram):
             area = (histogram[top_of_stack] *
                 ((index - stack[-1] - 1) 
                 if stack else index)) 
-            print('new area', area)
+            print('new area forward pass' , area)
             #time.sleep(10)
 
             # update max area, if needed 
@@ -90,7 +90,7 @@ def max_area_histogram(histogram):
                 if stack else index)) 
 
         # update max area, if needed 
-        print('new area', area)
+        print('new area backward pass', area)
         max_area = max(max_area, area) 
         dump(stack,histogram,max_area)
 
