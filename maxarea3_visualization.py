@@ -2,9 +2,10 @@ from colorama import Fore, Back, Style
 import time
 # Python3 program to find maximum 
 # rectangular area in linear time 
-def dump(stack,histogram,max_area):
+def dump(stack,histogram,max_area,index):
     print('\x1b[2J')
     print('max',max_area)
+    print('index',index)
     for i in range(len(histogram)):
         if i in stack:
             print(Back.WHITE + Style.BRIGHT ,end="")
@@ -15,7 +16,7 @@ def dump(stack,histogram,max_area):
     print()
             
     print('input',histogram,stack)
-    #time.sleep(1)
+    time.sleep(1)
 
 def max_area_histogram(histogram): 
     # This function calulates maximum 
@@ -42,7 +43,7 @@ def max_area_histogram(histogram):
 
         if (not stack) or (histogram[stack[-1]] <= histogram[index]): 
             stack.append(index) 
-            dump(stack,histogram,max_area)
+            dump(stack,histogram,max_area,index)
             index += 1
 
         # If this bar is lower than top of stack, 
@@ -54,7 +55,7 @@ def max_area_histogram(histogram):
         else: 
             # pop the top 
             top_of_stack = stack.pop() 
-            dump(stack,histogram,max_area)
+            dump(stack,histogram,max_area,index)
 
             # Calculate the area with 
             # histogram[top_of_stack] stack 
@@ -67,11 +68,11 @@ def max_area_histogram(histogram):
                 ((index - stack[-1] - 1) 
                 if stack else index)) 
             print('new area forward pass' , area)
-            #time.sleep(10)
+            time.sleep(10)
 
             # update max area, if needed 
             max_area = max(max_area, area) 
-            dump(stack,histogram,max_area)
+            dump(stack,histogram,max_area,index)
 
     # Now pop the remaining bars from 
     # stack and calculate area with 
@@ -80,7 +81,7 @@ def max_area_histogram(histogram):
         
         # pop the top 
         top_of_stack = stack.pop() 
-        dump(stack,histogram,max_area)
+        dump(stack,histogram,max_area,index)
 
         # Calculate the area with 
         # histogram[top_of_stack] 
@@ -91,8 +92,9 @@ def max_area_histogram(histogram):
 
         # update max area, if needed 
         print('new area backward pass', area)
+        time.sleep(10)
         max_area = max(max_area, area) 
-        dump(stack,histogram,max_area)
+        dump(stack,histogram,max_area,index)
 
     # Return maximum area under 
     # the given histogram 
