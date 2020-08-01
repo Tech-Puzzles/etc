@@ -42,9 +42,10 @@ def multiply(num1, num2):
             # and add result to previously stored result 
             # at current position. 
             summ = n1 * n2 + result[i_n1 + i_n2] + carry 
-            print(Back.YELLOW + Style.BRIGHT , i_n2 ,end="")
-            print('summ = ','n1: ',n1,'*','n2: ',n2, '+', 'result[i_n1 + i_n2]: ', result[i_n1 + i_n2],'+','carry: ',carry)
+            print(Back.YELLOW + Style.BRIGHT ,end="")
+            print('summ = ','n1: ',n1,'*','n2: ',n2, '+', 'result[i_n1 + i_n2]: ', result[i_n1 + i_n2],'+','carry: ',carry, end="")
             print(Style.RESET_ALL, end="")
+            print()
   
             # Carry for next iteration 
             carry = summ // 10
@@ -53,11 +54,22 @@ def multiply(num1, num2):
             # Store result 
             result[i_n1 + i_n2] = summ % 10
             print('store result','result[i_n1 + i_n2]','i_n1 + i_n2:',i_n1 + i_n2,'summ%10:',summ % 10)
+            print(Back.BLUE + Style.BRIGHT ,end="")
+            print('result = ', result, end="")
+            print(Style.RESET_ALL, end="")
+            print()
+            #time.sleep(1)
+            #print('\x1b[2J')
   
             i_n2 += 1
   
             # store carry in next cell 
         if (carry > 0): 
+            print(Back.GREEN + Style.BRIGHT ,end="")
+            print('carry moved carry: ', carry, ' i_n1: ', i_n1,' i_n2: ',i_n2, end="")
+            print(Style.RESET_ALL, end="")
+            print()
+            #time.sleep(1)
             result[i_n1 + i_n2] += carry 
   
             # To shift position to left after every 
