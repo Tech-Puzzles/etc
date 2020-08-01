@@ -5,7 +5,7 @@ import time
   
 # Multiplies str1 and str2, and prints result. 
 def multiply(num1, num2): 
-    print('num1',num1,'num2',num2)
+    print('\n\n=======> num1: ',num1,'num2: ',num2)
     len1 = len(num1) 
     len2 = len(num2) 
     if len1 == 0 or len2 == 0: 
@@ -69,8 +69,12 @@ def multiply(num1, num2):
             print('carry moved carry: ', carry, ' i_n1: ', i_n1,' i_n2: ',i_n2, end="")
             print(Style.RESET_ALL, end="")
             print()
-            #time.sleep(1)
             result[i_n1 + i_n2] += carry 
+            print(Back.BLUE + Style.BRIGHT ,end="")
+            print('after carry result = ', result, end="")
+            print(Style.RESET_ALL, end="")
+            print()
+            #time.sleep(1)
   
             # To shift position to left after every 
             # multiplication of a digit in num1. 
@@ -115,5 +119,6 @@ elif(str1[0] == '-' and str2[0] == '-'):
 # print(multiply(str1, str2)) 
 
 print(multiply("123", "55")) 
+print(multiply("999", "9")) 
   
 # This code is contributed by ankush_953 
