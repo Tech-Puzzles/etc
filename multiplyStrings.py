@@ -42,7 +42,9 @@ def multiply(num1, num2):
             # and add result to previously stored result 
             # at current position. 
             summ = n1 * n2 + result[i_n1 + i_n2] + carry 
+            print(Back.YELLOW + Style.BRIGHT , i_n2 ,end="")
             print('summ = ','n1: ',n1,'*','n2: ',n2, '+', 'result[i_n1 + i_n2]: ', result[i_n1 + i_n2],'+','carry: ',carry)
+            print(Style.RESET_ALL, end="")
   
             # Carry for next iteration 
             carry = summ // 10
