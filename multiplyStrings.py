@@ -1,8 +1,11 @@
+from colorama import Fore, Back, Style
+import time
 # Python3 program to multiply two numbers  
 # represented as strings. 
   
 # Multiplies str1 and str2, and prints result. 
 def multiply(num1, num2): 
+    print('num1',num1,'num2',num2)
     len1 = len(num1) 
     len2 = len(num2) 
     if len1 == 0 or len2 == 0: 
@@ -29,6 +32,9 @@ def multiply(num1, num2):
         # Go from right to left in num2 
         for j in range(len2 - 1, -1, -1): 
               
+            print(Back.RED + Style.BRIGHT + 'i_n1: ' ,i_n1  ,' i_n2: ' , i_n2 ,end="")
+            print(Style.RESET_ALL, end="")
+            print()
             # Take current digit of second number 
             n2 = ord(num2[j]) - 48
           
@@ -36,12 +42,15 @@ def multiply(num1, num2):
             # and add result to previously stored result 
             # at current position. 
             summ = n1 * n2 + result[i_n1 + i_n2] + carry 
+            print('summ = ','n1: ',n1,'*','n2: ',n2, '+', 'result[i_n1 + i_n2]: ', result[i_n1 + i_n2],'+','carry: ',carry)
   
             # Carry for next iteration 
             carry = summ // 10
+            print('carry',carry,'summ//10',summ,'//',10)
   
             # Store result 
             result[i_n1 + i_n2] = summ % 10
+            print('store result','result[i_n1 + i_n2]','i_n1 + i_n2:',i_n1 + i_n2,'summ%10:',summ % 10)
   
             i_n2 += 1
   
@@ -89,6 +98,8 @@ elif(str1[0] != '-' and str2[0] == '-'):
 elif(str1[0] == '-' and str2[0] == '-'): 
     str1 = str1[1:] 
     str2 = str2[1:] 
-print(multiply(str1, str2)) 
+# print(multiply(str1, str2)) 
+
+print(multiply("123", "55")) 
   
 # This code is contributed by ankush_953 
