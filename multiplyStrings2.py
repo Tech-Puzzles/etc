@@ -45,7 +45,7 @@ def multiply(str1,str2):
         print(Style.RESET_ALL, end="")
         print()
 
-
+    answer=list(reversed(answer))
 
     print(answer)
     return answer
