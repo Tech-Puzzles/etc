@@ -5,6 +5,7 @@ def multiply(str1,str2):
     str1=list(reversed(str1))
     str2=list(reversed(str2))
     answer=[0]*(len(str1)+len(str2))
+    #carry=0
     for i in range(len(str1)):
         carry=0
         print('\n===')
