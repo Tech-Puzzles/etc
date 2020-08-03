@@ -7,6 +7,7 @@ def multiply(str1,str2):
     answer=[0]*(len(str1)+len(str2))
     for i in range(len(str1)):
         carry=0
+        print('\n===')
         for j in range(len(str2)):
             # summ = n1 * n2 + result[i_n1 + i_n2] + carry 
             # carry = summ // 10
@@ -38,6 +39,10 @@ def multiply(str1,str2):
             print()
         answer[i+j+1]+=carry
         print('setting carry','i+j+1',i+j+1,answer[i+j+1])
+        print(Back.RED + Style.BRIGHT ,end="")
+        print('ROW END',answer,end="")
+        print(Style.RESET_ALL, end="")
+        print()
 
 
 
