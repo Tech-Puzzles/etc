@@ -44,6 +44,8 @@ class MedianFinder(object):
             heappush(self.hi,num)
             if len(self.hi)>len(self.lo):
                 heappush(self.lo,-heappop(self.hi))
+        print('max heap',self.hi)
+        print('min heap',self.lo)
                 
     def findMedian(self) -> float:
         """
@@ -59,4 +61,8 @@ test=MedianFinder()
 test.addNum(5)
 print(test.findMedian())
 test.addNum(10)
+print(test.findMedian())
+test.addNum(1)
+print(test.findMedian())
+test.addNum(9)
 print(test.findMedian())
