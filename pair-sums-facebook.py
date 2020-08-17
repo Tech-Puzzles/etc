@@ -1,8 +1,26 @@
 import math
 
 def numberOfWays(arr, k):
-	answer=[]
-	pass
+    print('input',arr,k)
+    answers={}
+    count=0
+    map={}
+    for i in range(len(arr)):
+        if arr[i] in map:
+            map[arr[i]].append(i)
+        else:
+            map[arr[i]]=[i]
+    print(map)
+    if k/2 in map:
+        combo=len(map[k/2])
+        count+=combo*(combo-1)/2
+        del map[k/2]
+    for i in map:
+        if k-i in map:
+            count+=len(map[k-i])*len(map[i])
+            #print('k-i',k-i,map[k-i])
+        
+    return int(count-1)
 
 
 
