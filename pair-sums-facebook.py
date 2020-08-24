@@ -11,16 +11,18 @@ def numberOfWays(arr, k):
         else:
             map[arr[i]]=[i]
     print(map)
-    if k/2 in map:
+    if k%2==0 and k/2 in map:
         combo=len(map[k/2])
+        print('combo',combo)
         count+=combo*(combo-1)/2
         del map[k/2]
     for i in map:
         if k-i in map:
+            print('in k-i',k-i,map)
             count+=len(map[k-i])*len(map[i])
             #print('k-i',k-i,map[k-i])
         
-    return int(count-1)
+    return count if count==0 else int(count-1)
 
 
 
@@ -72,5 +74,16 @@ if __name__ == "__main__":
 
   # Add your own test cases here
   
+  k_2 = 7
+  arr_2 = [1, 5, 3, 3, 3]
+  expected_2 = 0
+  output_2 = numberOfWays(arr_2, k_2)
+  check(expected_2, output_2)
 
+
+  k_2 = 6
+  arr_2 = [1, 5, 3, 3, 3, 3,3]
+  expected_2 = 11
+  output_2 = numberOfWays(arr_2, k_2)
+  check(expected_2, output_2)
 
