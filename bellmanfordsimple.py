@@ -13,12 +13,14 @@ class Graph:
 			print(item)
 	def bellmanford(self,src):
 		self.print()
+		iterations=0
 		dist = [float("Inf")] * self.V 
 		dist[src] = 0
 		# dist[src] = 1
 		for i in range(self.V-1):
 			for (u,v,w) in self.graph:
 				#print(i,u,v,w)
+				iterations+=1
 				if dist[u] != float("Inf") and dist[u]+w < dist[v]:
 					dist[v] = dist[u] + w
 		for (u,v,w) in self.graph:
@@ -27,6 +29,7 @@ class Graph:
 				print("Graph contains negative weight cycle") 
 				return
 		print('dist',dist)
+		print('iterations',iterations)
 
 		
 g = Graph(5) 
