@@ -55,12 +55,19 @@ list = []
 
 
 def permutex(a, l, r):
-    if l==r:
-        print(a)
+    print('calling',a,'left',l,'right',r)
+    #if l==r:
+    if l==len(a)-1:
+        print('answer',a)
     else:
-        for i in range(l,r+1):
+        #for i in range(l,r+1):
+        for i in range(l,len(a)):
+            print('swapping',i,l)
             a[l], a[i] = a[i], a[l]
-            permutex(a, l+1, r)
+            #permutex(a, l+1, r)
+            permutex(a, l+1, len(a)-1)
             a[l], a[i] = a[i], a[l] # backtrack
+# A=[1,2,3,4]
+# A=[1,2]
 A=[1,2,3]
 permutex(A, 0, len(A)-1)
