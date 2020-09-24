@@ -18,7 +18,7 @@ def visualize(arr):
 #                 print(" " ,end="")
     
     print()
-    time.sleep(.05)
+    time.sleep(.5)
 # Python program for implementation of heap Sort 
 
 # To heapify subtree rooted at index i. 
