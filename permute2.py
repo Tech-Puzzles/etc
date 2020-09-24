@@ -6,9 +6,10 @@ def permute(A,start):
 		#for i in range(len(A)):
 			# swap i and start
 			A[start],A[i]=A[i],A[start]
+			print('swap',start,i)
 			permute(A,start+1)
 			# swap i and start
 			A[start],A[i]=A[i],A[start]
 
-permute([1,2,3],0)
+permute([1,2,3,4],0)
 
