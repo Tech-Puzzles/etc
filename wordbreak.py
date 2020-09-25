@@ -8,6 +8,7 @@ class Solution:
         print('tracking',dp)
         for i in range(1,len(s)+1):
             for j in range(0,i):
+                print('iterate', s[j:i])
                 print('test','j',j,'i',i,dp[j] , s[j:i] , 'in', wordDict, s[j:i] in wordDict)
                 print('lookat', s[j:i], s[j:i] in wordDict)
                 print('is back item true', dp[j], 'j',j, 'i',i)
@@ -49,4 +50,5 @@ test=Solution()
 # print(test.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a"]))
 # print(test.wordBreak("aaaab", ["a"]))
 # print(test.wordBreak("axaxx", ["a"]))
-print(test.wordBreak("abc", ["a","abc"]))
+#print(test.wordBreak("abc", ["a","abc"]))
+print(test.wordBreak("abcde", ["a","abc"]))
