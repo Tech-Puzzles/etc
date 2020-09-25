@@ -2,16 +2,19 @@ from typing import List
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         dp=[False]*(len(s)+1)
+        dp2=[0]*(len(s)+1)
         print('tracking',dp)
         dp[0]=True
         print('tracking',dp)
         for i in range(1,len(s)+1):
             for j in range(0,i):
-                print('test',dp[j] , s[j:i] , 'in', wordDict, s[j:i] in wordDict)
+                print('test','j',j,'i',i,dp[j] , s[j:i] , 'in', wordDict, s[j:i] in wordDict)
                 print('lookat', s[j:i], s[j:i] in wordDict)
+                print('is back item true', dp[j], 'j',j, 'i',i)
                 if dp[j] and s[j:i] in wordDict:
                     dp[i]=True
-                print('tracking',dp)
+                    dp2[i]=1
+                print('tracking',dp2)
         return dp[-1]                
 
     def wordBreak2(self, s: str, wordDict: List[str]) -> bool:
@@ -41,4 +44,9 @@ test=Solution()
 #print(test.wordBreak2("catsanddog", wordDict = ["cats", "dog", "sand", "and", "cat"]))
 #print(test.wordBreak2("leetcode",  ["leet","code"]))
 # print(test.wordBreak2( "bb", ["a","b","bbb","bbbb"]))
-print(test.wordBreak2("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]))
+# print(test.wordBreak2("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]))
+# print(test.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]))
+# print(test.wordBreak("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", ["a"]))
+# print(test.wordBreak("aaaab", ["a"]))
+# print(test.wordBreak("axaxx", ["a"]))
+print(test.wordBreak("abc", ["a","abc"]))
