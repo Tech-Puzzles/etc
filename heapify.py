@@ -14,6 +14,7 @@ def buildheap(arr):
 def build_max_heap(array):
     for i in reversed(range(len(arr)//2)):
         #min_heapify(array, i)
+        print('heapify2',i,len(arr))
         heapify2(arr, len(arr), i)
 
 def heapify2(arr,n,i):
