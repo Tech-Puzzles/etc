@@ -1,3 +1,5 @@
+import random
+
 def heapify(arr,i,n):
 	largest=i
 	left=i*2+1
@@ -14,10 +16,21 @@ def heapify(arr,i,n):
 
 #arr=[1,2,3,4]
 #arr=[1,2,3,4]
-arr=[1,2,3,4,5,6,7]
-for i in reversed(range(len(arr)//2)):
-	heapify(arr,i,len(arr))
+# arr=[1,2,3,4,5,6,7]
+arr=[0]*100
+for i in range(len(arr)):
+	arr[i]=i
+random.shuffle(arr)
 
-print(arr)
+def heapsort(arr):
+		for i in reversed(range(len(arr)//2)):
+			heapify(arr,i,len(arr))
 
-		
+		for i in reversed(range(len(arr))):
+			arr[0],arr[i] = arr[i],arr[0]
+			heapify(arr,0,i)
+
+		print(arr)
+
+heapsort(arr)
+	
