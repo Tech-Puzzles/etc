@@ -58,8 +58,7 @@ def heapinsert(arr,i):
     # bubble up
 
     parent=(i-1)//2
-    while i != 0:
-        if arr[parent] < arr[i]:
+    while i != 0 and arr[parent] < arr[i]:
             arr[parent] , arr[i] = arr[i] , arr[parent] 
             i=parent
             parent=(i-1)//2
@@ -73,3 +72,7 @@ heapinsert(arr,len(arr)-1)
 print(arr)
 
 print('isHeap',isHeap(arr,len(arr),0))
+
+arr.append(99)
+heapinsert(arr,len(arr)-1)
+print(arr)
