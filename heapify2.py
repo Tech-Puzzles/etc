@@ -1,5 +1,23 @@
 import random
 
+def isHeap(arr, i, n): 
+      
+# If a leaf node  
+    if i > int((n - 2) / 2):  
+        return True
+      
+    # If an internal node and is greater  
+    # than its children, and same is 
+    # recursively true for the children  
+    if(arr[i] >= arr[2 * i + 1] and 
+       arr[i] >= arr[2 * i + 2] and 
+       isHeap(arr, 2 * i + 1, n) and
+       isHeap(arr, 2 * i + 2, n)): 
+        return True
+      
+    return False
+
+
 def heapify(arr,i,n):
 	largest=i
 	left=i*2+1
@@ -17,7 +35,7 @@ def heapify(arr,i,n):
 #arr=[1,2,3,4]
 #arr=[1,2,3,4]
 # arr=[1,2,3,4,5,6,7]
-arr=[0]*100
+arr=[0]*10
 for i in range(len(arr)):
 	arr[i]=i
 random.shuffle(arr)
@@ -32,5 +50,24 @@ def heapsort(arr):
 
 		print(arr)
 
-heapsort(arr)
-	
+# heapsort(arr)
+
+def heapinsert(arr,i):
+	# bubble up
+
+	parent=(i-1)//2
+	while parent != 0:
+		if arr[parent] < arr[i]:
+			arr[parent] , arr[i] = arr[i] , arr[parent] 
+			i=parent
+			parent=(i-1)//2
+			
+		
+print('isHeap',isHeap(arr,len(arr),0))
+print(arr)
+
+arr.append(100)
+heapinsert(arr,len(arr)-1)
+print(arr)
+
+print('isHeap',isHeap(arr,len(arr),0))
