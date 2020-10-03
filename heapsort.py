@@ -84,6 +84,7 @@ for i in range(len(arr)):
      #arr[i]=len(arr)-i
      arr[i]=i
 #random.shuffle(arr)
+arr=[4,3,5]
 heapSort(arr) 
 n = len(arr) 
 print ("Sorted array is") 
