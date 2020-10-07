@@ -9,34 +9,54 @@ class Node:
     self.data = x
     self.next = None
 
+def printLinkedList(head):
+  print('[', end='')
+  while head != None:
+    print(head.data, end='')
+    head = head.next
+    if head != None:
+      print(' ', end='')
+  print(']', end='')
 
-def remove_duplicates2(head):
+def remove_duplicatesNew(head):
   #TODO: Write - Your - Code
   #print(vars(head))
   hash={}
   node=head
+  if head == None:
+    return head
   while node is not None:
     print(vars(node))
     if not node.data in hash:
       hash[node.data]=True
       print('new',node.data)
+    else:
+        node=node.next
+    if node == None:
+        return head
     node=node.next
   return head
-  
-def createLinkedList(arr):
-  head = None
-  tempHead = head
-  for v in arr:
-    if head == None:
-      head = Node(v)
-      tempHead = head
-    else:
-      head.next = Node(v)
-      head = head.next
-  return tempHead
-
 
 def remove_duplicates(head):
+		hash={}
+		curr=head
+		hash[curr.data]=True
+		if head == None:
+			return head
+		while curr.next != None:
+			if curr.next.data in hash:
+				curr.next=curr.next.next
+			else:
+				hash[curr.next.data]=True
+				curr=curr.next
+		return head
+				
+
+
+  
+	
+# def remove_duplicatesOriginal(head):
+def remove_duplicatesOld(head):
 
   if head == None:
     return head
@@ -56,8 +76,22 @@ def remove_duplicates(head):
 
   return head
 
+  
+def createLinkedList(arr):
+  head = None
+  tempHead = head
+  for v in arr:
+    if head == None:
+      head = Node(v)
+      tempHead = head
+    else:
+      head.next = Node(v)
+      head = head.next
+  return tempHead
+
+
 def display(a):
-	print(a)
+    print(a)
 
 test_case_number = 1
 
@@ -79,7 +113,11 @@ def check(expectedHead, outputHead):
   rightTick = '\u2713'
   wrongTick = '\u2717'
   if result:
-    print(rightTick, ' Test #', test_case_number, sep='')
+    print(rightTick, ' Test #', test_case_number, ': Expected ', sep='', end='')
+    printLinkedList(tempExpectedHead)
+    print(' Your output: ', end='')
+    printLinkedList(tempOutputHead)
+    print()
   else:
     print(wrongTick, ' Test #', test_case_number, ': Expected ', sep='', end='')
     printLinkedList(tempExpectedHead)
