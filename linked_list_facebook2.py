@@ -127,8 +127,9 @@ def check(expectedHead, outputHead):
   test_case_number += 1
 
 
-array1 = [4, 7, 4, 9, 7, 11, 4]
-array1_expected = [4, 7, 9, 11]
+# array1 = [4, 7, 4, 9, 7, 11, 4]
+array1 = [4,4,4,4, 7, 4, 9, 7, 11, 4,4,4,3]
+array1_expected = [4, 7, 9, 11,3]
 list1 = createLinkedList(array1)
 list1_expected = createLinkedList(array1_expected)
 print("Original: ", end="")
