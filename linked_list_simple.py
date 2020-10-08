@@ -30,7 +30,8 @@ def remove_duplicates(head):
 
 a=Node(1)
 b=a.next=Node(1)
-c=b.next=Node(3)
+c=b.next=Node(5)
+d=c.next=Node(1)
 
 # print(Node(1))
 print(a)
