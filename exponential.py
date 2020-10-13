@@ -39,12 +39,12 @@ def tablize2(n,truths=[]):
 #tablize2(int(sys.argv[1]))
 
 
-def exp(n,set1=[]):
+def list_exponential(n,set1=[]):
 	if n == 0:
 		print(set1)
 	else:
 		n-=1
-		exp(n, [False]+set1)
-		exp(n, [True]+set1)
+		list_exponential(n, [False]+set1)
+		list_exponential(n, [True]+set1)
 
-exp(int(sys.argv[1]))
+list_exponential(int(sys.argv[1]))
