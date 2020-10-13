@@ -27,10 +27,13 @@ def tablize(n, truths=[]):
 
 
 def tablize2(n,truths=[]):
+	print('call',n)
 	if n == 0:
 		print (truths)
 	else:
 		for i in [True,False]:
 			#tablize2(n-1,[i]+truths)
 			tablize2(n-1,truths+[i])
-tablize2(3)
+
+#tablize2(3)
+tablize2(int(sys.argv[1]))
