@@ -18,9 +18,19 @@ def exponential(n):
 
 def tablize(n, truths=[]):
     if not n:
-        print truths
+        print (truths)
     else:
         for i in [True, False]:
             tablize(n-1, truths+[i])
 
-tablize(6)
+#tablize(6)
+
+
+def tablize2(n,truths=[]):
+	if n == 0:
+		print (truths)
+	else:
+		for i in [True,False]:
+			#tablize2(n-1,[i]+truths)
+			tablize2(n-1,truths+[i])
+tablize2(3)
