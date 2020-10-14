@@ -14,12 +14,16 @@ def insert(root,data):
 		return Node(data)
 	else:
 		if root.data == data:
-			return root
+			#return root
+			pass
 		elif root.data > data:
 			root.left = insert(root.left, data)
+			#return root
 		elif root.data < data:
 			root.right = insert(root.right, data)
+			#return root
 	# never reach?
+	print('XXX',root)
 	return root
 
 def inorder(root):
@@ -32,6 +36,8 @@ def inorder(root):
 tree=insert(None,10)
 tree=insert(tree,6)
 tree=insert(tree,20)
+tree=insert(tree,1)
+tree=insert(tree,1)
 tree=insert(tree,1)
 
 print(tree)
