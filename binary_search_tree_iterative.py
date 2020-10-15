@@ -88,10 +88,12 @@ def bst_stack(root):
 	while len(stk) > 0 or root != None:
 		if root != None:
 			stk.append(root)
+			# visit left
 			root = root.left
 			continue
 		# visit node
 		result += str(stk[-1].key) + " "
+		# visit right
 		root = stk[-1].right
 		stk.pop()
 	return result
