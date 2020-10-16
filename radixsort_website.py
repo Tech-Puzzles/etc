@@ -45,7 +45,7 @@ def radix_sort(arr, max_value):
   for d in range(num_digits):
     # Counting sort takes O(n+k)
     arr = counting_sort(arr, max_value, lambda a: get_digit(a, d+1))
-    print('arr',arr)
+    print('arr',arr,d)
   return arr
 arr = [170, 45, 75, 90, 802, 24, 2, 66]
 
