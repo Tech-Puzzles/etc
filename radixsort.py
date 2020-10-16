@@ -47,7 +47,7 @@ def radixSort(arr):
     # where i is current digit number
     exp = 1
     print('arr',arr,exp,max1)
-    while max1 / exp > 0:
+    while int(max1 / exp) > 0:
         countingSort(arr, exp)
         print('arr',arr,exp,max1)
         exp *= 10
