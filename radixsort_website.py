@@ -7,6 +7,7 @@ def counting_sort(arr, max_value, get_index):
 
   # Accumulating - O(k)
   for i, c in enumerate(counts):
+    print('testing')
     if i == 0:
       continue
     else:
