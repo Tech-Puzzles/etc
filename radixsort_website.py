@@ -1,4 +1,5 @@
 def counting_sort(arr, max_value, get_index):
+  print('max_value',max_value)
   counts = [0] * max_value
 
   # Counting - O(n)
