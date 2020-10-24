@@ -19,4 +19,5 @@ def bellmanford(V,E,start):
     return dist
 
     
-print(bellmanford(['s','a','b','c'],[('s', 'a', 5) , ('a', 'c', 3) , ('s', 'b', 6) , ('c', 'a', -7) , ('b', 'c', -2) ],'s'))
+# print(bellmanford(['s','a','b','c'],[('s', 'a', 5) , ('a', 'c', 3) , ('s', 'b', 6) , ('c', 'a', -7) , ('b', 'c', -2) ],'s'))
+print(bellmanford(['s','a','b','c'],[('s', 'a', 5) , ('a', 'c', 3) , ('s', 'b', 6) , ('c', 'a', 7) , ('b', 'c', -2) ],'s'))
