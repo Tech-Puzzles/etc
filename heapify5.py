@@ -39,6 +39,7 @@ def heapsort(arr):
         arr[0],arr[end] = arr[end],arr[0]
         heapify(arr,0,end)
 
+arr=[1,2,3,4,5]
 
 heapsort(arr)
 print(arr)
