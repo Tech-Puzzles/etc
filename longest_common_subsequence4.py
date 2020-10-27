@@ -34,7 +34,11 @@ def lcs(X,Y):
 
 #X="XABXABXAB"
 #Y="XAB"
-X=  "Mary had a little lamb"
-Y= "Mary little"
+# X=  "Mary had a little lamb"
+# Y= "Mary little"
+X="It is a Mury had a little lamb"
+Y="It is a Mary had a little lamb"
+print('len(X)',len(X))
+print('len(Y)',len(Y))
 print(lcs(X,Y))
         
