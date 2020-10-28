@@ -23,9 +23,11 @@ function lcs(X,Y){
 			}
 			else {
 				if ( 	(L[i-1][j])[0] > (L[i][j-1])[0] ){
-					L[i][j] = JSON.parse(JSON.stringify(L[i-1][j]));
+					//L[i][j] = JSON.parse(JSON.stringify(L[i-1][j]));
+					L[i][j] = L[i-1][j];
 				} else {
-					L[i][j] = JSON.parse(JSON.stringify(L[i][j-1]));
+					//L[i][j] = JSON.parse(JSON.stringify(L[i][j-1]));
+					L[i][j] = L[i][j-1];
 				}
 			}
 	    }
@@ -64,5 +66,5 @@ function lcs(X,Y){
 	return(string.split("").reverse().join(""));
 }
 
-//console.log(lcs("mury had a little lamb","mary had a little lamb"));
-console.log(lcs("noah","papa"));
+console.log(lcs("mury had a little lamb","mary had a little lamb"));
+//console.log(lcs("noah","papa"));
