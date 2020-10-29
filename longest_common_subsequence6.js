@@ -66,5 +66,6 @@ function lcs(X,Y){
 	return(string.split("").reverse().join(""));
 }
 
-console.log(lcs("mury had a little lamb","mary had a little lamb"));
+//console.log(lcs("mury had a little lamb","mary had a little lamb"));
 //console.log(lcs("noah","papa"));
+console.log(lcs(process.argv[2], process.argv[3]));
