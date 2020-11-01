@@ -16,6 +16,7 @@ def bellmanford(S,V,E):
         if dist[u] != float("inf") and dist[u] + w < dist[v]:
             # relax edge
             print('negative cycle')
+			return
     return dist
 
 V=['A','B','C']
