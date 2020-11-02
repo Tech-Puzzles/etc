@@ -16,4 +16,10 @@ def bellmanford(S,V,E):
 
 # test
 print(bellmanford('S',['S','A','B','C'],[('S','A',1),('S','B',2),('A','C',-2)]))
+
+def runTest(input,expect):
+	S,V,E=input
+	ret = bellmanford(S,V,E)
+	print('pass' if ret == expect else 'fail')
     
+runTest(('S',['S','A','B','C'],[('S','A',1),('S','B',2),('A','C',-2)]),{'S': 0, 'A': 1, 'B': 2, 'C': -1})
